@@ -71,6 +71,30 @@ header li {
   list-style: none;
 }
 
+.close-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  display: none;
+}
+
+.is-open {
+  display: block;
+}
+
+.toggle {
+  display: none;
+}
+
+.menu.slide {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
 header {
   padding: 15px 0;
   width: 95%;
@@ -118,6 +142,14 @@ header .wrapper ul li {
 
 header .wrapper ul li:last-child {
   margin-right: 0;
+}
+
+header .wrapper .toggle {
+  padding: 5px 10px;
+}
+
+header .wrapper .toggle svg {
+  height: 20px;
 }
 
 .hero {
@@ -187,5 +219,51 @@ header .wrapper ul li:last-child {
   background-position: center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
+}
+
+@media (max-width: 780px) {
+  .hero .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  html {
+    font-size: 55%;
+  }
+  .toggle {
+    display: block;
+    cursor: pointer;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 60%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+    background-color: var(--bodyclr);
+    padding: 5rem 7.5%;
+    z-index: 5 !important;
+    -webkit-box-shadow: -3px 0 10px rgba(0, 0, 0, 0.4);
+            box-shadow: -3px 0 10px rgba(0, 0, 0, 0.4);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .menu li {
+    margin-right: 0 !important;
+    margin-bottom: 40px;
+  }
+  .menu li:last-child {
+    margin-bottom: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */
