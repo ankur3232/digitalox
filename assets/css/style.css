@@ -37,8 +37,8 @@ body {
 .btn {
   display: inline-block;
   text-align: center;
-  padding: 5px 10px 9px;
-  min-width: 80px;
+  padding: 10px 10px 13px;
+  min-width: 100px;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -143,8 +143,8 @@ header .wrapper ul li:last-child {
 }
 
 .hero .wrapper .hero-content {
-  -ms-flex-preferred-size: 45%;
-      flex-basis: 45%;
+  -ms-flex-preferred-size: 55%;
+      flex-basis: 55%;
   padding: 10rem 5rem;
 }
 
@@ -172,12 +172,12 @@ header .wrapper ul li:last-child {
 }
 
 .hero .wrapper .hero-content .ctas .btn {
-  padding: 10px 15px;
+  padding: 15px 25px;
 }
 
 .hero .wrapper .hero-img {
-  -ms-flex-preferred-size: 45%;
-      flex-basis: 45%;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
   padding: 3rem;
 }
 
@@ -186,5 +186,6 @@ header .wrapper ul li:last-child {
   height: 100%;
   background-position: center !important;
   background-size: cover !important;
+  background-repeat: no-repeat !important;
 }
 /*# sourceMappingURL=style.css.map */

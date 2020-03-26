@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DigitalOX - Inspiring Digits</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
 </head>
 <body>
     <header class="soft-big">
@@ -33,10 +35,31 @@
                 </div>
             </div>
             
-            <div class="hero-img soft-big">
+            <div class="hero-img soft-big owl-carousel owl-theme" id="caro">
+                <div style="background: url(assets/images/hero.jpg) no-repeat"></div>
+                <div style="background: url(assets/images/hero.jpg) no-repeat"></div>
                 <div style="background: url(assets/images/hero.jpg) no-repeat"></div>
             </div>
         </div>
     </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+
+    <script>
+    // owl carousel init & options
+    $('#caro').owlCarousel({
+            
+            autoplay:true,
+            autoplayTimeout:3000,
+            autoplayHoverPause:true,
+            loop: true,
+            margin: 20,
+            nav: true,
+            dots: true,
+            items: 1
+        });
+    </script>
 </body>
 </html>
