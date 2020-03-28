@@ -83,7 +83,7 @@ header li {
 }
 
 .is-open {
-  display: block;
+  display: block !important;
 }
 
 .toggle {
@@ -91,8 +91,49 @@ header li {
 }
 
 .menu.slide {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-animation: slide 0.3s ease-in-out;
+          animation: slide 0.3s ease-in-out;
   -webkit-transform: translateX(0);
   transform: translateX(0);
+}
+
+@-webkit-keyframes slide {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slide {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.upanim {
+  -webkit-transform: translateY(8px) rotate(-135deg);
+  transform: translateY(8px) rotate(-135deg);
+}
+
+.midanim {
+  opacity: 0;
+}
+
+.downanim {
+  -webkit-transform: translateY(-6px) rotate(135deg);
+  transform: translateY(-6px) rotate(135deg);
 }
 
 header {
@@ -124,6 +165,14 @@ header .wrapper .logo img {
   height: 40px;
 }
 
+header .wrapper .small-logo {
+  display: none;
+}
+
+header .wrapper .small-logo img {
+  height: 50px;
+}
+
 header .wrapper ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -145,15 +194,34 @@ header .wrapper ul li:last-child {
 }
 
 header .wrapper .toggle {
-  padding: 5px 10px;
+  padding: 8px 12px;
+  z-index: 13;
+  outline: none;
 }
 
-header .wrapper .toggle svg {
-  height: 20px;
+header .wrapper .toggle .ham-line2 {
+  width: 15px;
+  height: 2px;
+  background-color: #333;
+  position: relative;
+  margin: 5px 0;
+  margin-left: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  outline: none;
+}
+
+header .wrapper .toggle .ham-line1, header .wrapper .toggle .ham-line3 {
+  background-color: #333;
+  width: 20px;
+  height: 2px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  outline: none;
 }
 
 .hero {
-  height: calc(100vh - 89px);
+  height: calc(100vh - 94px);
   position: relative;
 }
 
@@ -242,7 +310,7 @@ header .wrapper .toggle svg {
   position: absolute;
   top: 50%;
   right: 0px;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   width: 100%;
   -webkit-transform: scale(0);
           transform: scale(0);
@@ -263,6 +331,9 @@ header .wrapper .toggle svg {
 }
 
 @media (max-width: 780px) {
+  html {
+    font-size: 55%;
+  }
   .hero .wrapper {
     position: relative !important;
     height: 100%;
@@ -281,15 +352,9 @@ header .wrapper .toggle svg {
   .hero .wrapper .hero-img {
     height: 200px !important;
   }
-  html {
-    font-size: 55%;
-  }
   .toggle {
     display: block;
     cursor: pointer;
-  }
-  header .wrapper {
-    overflow: hidden !important;
   }
   .menu {
     position: absolute;
@@ -304,19 +369,26 @@ header .wrapper .toggle svg {
     -webkit-box-pack: center !important;
         -ms-flex-pack: center !important;
             justify-content: center !important;
+    -webkit-box-align: end !important;
+        -ms-flex-align: end !important;
+            align-items: flex-end !important;
     background-color: var(--bodyclr);
     padding: 5rem 7.5%;
     z-index: 5 !important;
     -webkit-box-shadow: -3px 0 10px rgba(0, 0, 0, 0.4);
             box-shadow: -3px 0 10px rgba(0, 0, 0, 0.4);
     -webkit-transform: translateX(100%);
-    transform: translateX(100%);
+            transform: translateX(100%);
     -webkit-transition: 0.3s;
     transition: 0.3s;
+    display: none !important;
   }
   .menu li {
-    margin-right: 0 !important;
+    margin-right: 10px !important;
     margin-bottom: 40px;
+  }
+  .menu li a {
+    width: 150px;
   }
   .menu li:last-child {
     margin-bottom: 0;
@@ -326,6 +398,21 @@ header .wrapper .toggle svg {
 @media (max-width: 500px) {
   html {
     font-size: 50%;
+  }
+  header {
+    padding: 5px 0;
+  }
+  header .logo {
+    display: none;
+  }
+  header .small-logo {
+    display: initial !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .menu li a {
+    width: 100px;
   }
 }
 /*# sourceMappingURL=style.css.map */
